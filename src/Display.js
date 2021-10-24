@@ -7,11 +7,27 @@ export default class Display{
         this.context.fillStyle = bg;
     }
 
-    drawRectangle(l, t, w, h, color) {
+    // destructurize the object that needs to be drawn
+    drawRectangle({l, t, w, h}, color) {
         this.context.fillStyle = color;
-        this.context.fillRect(l, t, w, h);
+        this.context.fillRect(Math.floor(l), Math.floor(t), Math.floor(w), Math.floor(h));
     }
 
+    drawStaticObject({l,t,src}) {
+
+        let image = new Image();
+        image.src = src
+
+        this.context.drawImage(image, l, t);
+    }
+
+    drawAnimatedObject({l, t, w, h, src}, frameCount) {
+
+        let image = new Image();
+        image.src = src;
+
+        this.context.drawImage(image, w * frameCount, 0, Math.floor(w - 1), h, Math.floor(l), Math.floor(t),  Math.floor(w - 1), Math.floor(h));
+    }
 
     render() {
         this.context.clearRect(0, 0, canvas.width, canvas.height);

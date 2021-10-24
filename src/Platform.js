@@ -1,7 +1,7 @@
 import Rectangle from "./Rectangle.js";
 export default class Platform extends Rectangle {
-    constructor(l, t, w, h) {
-        super(l, t, w, h);
+    constructor(l, t, w, h, src) {
+        super(l, t, w, h, src);
         this.vy = 0.5;
     }
     update() {

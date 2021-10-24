@@ -4,14 +4,14 @@ import Ground from './Ground.js';
 export default class Game {
     constructor () {
         this.world= {
-            width: 480,
-            height: 500,
+            width: 400,
+            height: 200,
             friction: 0.9,
             gravity: 1.4,
             groundHeight: 20
         }
-        this.player = new Player(0, 50, 40, 40);
-        this.platforms = [new Platform(100, 250, 128, 32), new Platform(200, 330, 128, 32)]
+        this.player = new Player(0, 50, 32, 32, 'src/assets/images/peer-default.png');
+        this.platforms = [new Platform(100, 20, 64, 16, 'src/assets/images/platform.png'), new Platform(200, 100, 128, 32,'src/assets/images/platform.png')]
         this.ground = new Ground(0, this.world.height - this.world.groundHeight, this.world.width, this.world.groundHeight);
     }
     update(deltaTime) {

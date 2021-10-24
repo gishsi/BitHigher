@@ -1,8 +1,8 @@
 import Rectangle from "./Rectangle.js";
 import {detect} from './Overlap.js'
 export default class Player extends Rectangle {
-    constructor(l, t, w, h) {
-        super(l, t, w, h);
+    constructor(l, t, w, h, src) {
+        super(l, t, w, h, src);
         this.canJump = false;
     }
     update(g, f) {

@@ -8,17 +8,28 @@ window.onload = () => {
 
    document.getElementById('canvas').width = game.world.width;
    document.getElementById('canvas').height = game.world.height;
-
+    let frameCount = 0;
+    let frameTimer = 0;
+    let frameInterval = 5;
     let draw = () => {
-        display.setBg('#000');
+        display.setBg('#79adb7');
         display.render();
 
         // flooring the values to get rid of blury lines
-        display.drawRectangle(Math.floor(game.player.l), Math.floor(game.player.t), Math.floor(game.player.w), Math.floor(game.player.h), 'yellow');
-        // needs to check if it still needs to draw the ground using the flag stored in the ground object
-        display.drawRectangle(Math.floor(game.ground.l), Math.floor(game.ground.t), Math.floor(game.ground.w), Math.floor(game.ground.h), 'grey');
         
-        game.platforms.forEach(platform => display.drawRectangle(platform.l, platform.t, platform.w, platform.h, 'red'))
+        display.drawAnimatedObject(game.player, frameCount);
+        /*
+            Timer for handling the animation of the object
+        */
+        if(frameTimer > frameInterval) {
+            frameCount++;
+            if(frameCount > 3) frameCount = 0;
+            frameTimer = 0;
+        }
+        frameTimer++;
+        
+        display.drawRectangle(game.ground, 'grey');
+        game.platforms.forEach(platform => display.drawStaticObject(platform))
     }
 
 
