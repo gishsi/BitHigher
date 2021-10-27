@@ -1,8 +1,13 @@
-import Rectangle from "./Rectangle.js";
-export default class Platform extends Rectangle {
+import GameObject from "./GameObject.js";
+import Sprite from './Sprite.js';
+export default class Platform extends GameObject {
     constructor(l, t, w, h, src) {
         super(l, t, w, h, src);
         this.vy = 0.5;
+        this.sprite =  new Sprite({
+            gameObject: this,
+            src: src || "src/assets/images/platform.png",
+        });
     }
     update() {
         this.ob = this.b;

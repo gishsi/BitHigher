@@ -8,25 +8,39 @@ export default class Display{
     }
 
     // destructurize the object that needs to be drawn
-    drawRectangle({l, t, w, h}, color) {
-        this.context.fillStyle = color;
+    drawRectangle({l, t, w, h, color}) {
+        this.context.beginPath();
+        this.context.fillStyle = color;     
         this.context.fillRect(Math.floor(l), Math.floor(t), Math.floor(w), Math.floor(h));
+        this.context.closePath();
     }
 
-    drawStaticObject({l,t,src}) {
-
-        let image = new Image();
-        image.src = src
-
-        this.context.drawImage(image, l, t);
+    drawStaticObject({l,t, sprite}) {
+        let {image} = sprite;
+        this.context.drawImage(image, Math.floor(l), Math.floor(t));
     }
 
-    drawAnimatedObject({l, t, w, h, src}, frameCount) {
+    drawAnimatedObject({l, t, w, h, sprite}) {
+        let {image, frame} = sprite;
 
-        let image = new Image();
-        image.src = src;
+        this.context.drawImage(image, w * frame, 0, 
+            Math.floor(w), Math.floor(h), 
+            Math.floor(l), Math.floor(t),  
+            Math.floor(w), Math.floor(h));
 
-        this.context.drawImage(image, w * frameCount, 0, Math.floor(w - 1), h, Math.floor(l), Math.floor(t),  Math.floor(w - 1), Math.floor(h));
+        sprite.updateAnimationProgress();
+    }
+
+
+    drawBackground({l, t, w, h, sprite, backgroundHeight}) {
+        let {image} = sprite;
+
+        this.context.drawImage(
+            image, 
+            0, backgroundHeight, 
+            Math.floor(w), 
+            Math.floor(h), Math.floor(l), Math.floor(t),  
+            Math.floor(w), Math.floor(h));
     }
 
     render() {

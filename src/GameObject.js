@@ -1,4 +1,5 @@
-export default class Rectangle {
+import Sprite from './Sprite.js';
+export default class GameObject {
     constructor(l, t, w, h, src) {
         this.l = this.ol = l;
         this.r = this.or = l + w;
@@ -8,7 +9,11 @@ export default class Rectangle {
         this.w = w;
         this.h = h;
 
-        this.src = src;
+        this.sprite =  new Sprite({
+            gameObject: this,
+            src: src,
+        });
+        
     }
     setBottom(b) { this.b = b; this.t = b - this.h; }
     setLeft(l)   { this.l = l; this.r = l + this.w; }
