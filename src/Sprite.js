@@ -35,7 +35,6 @@ export default class Sprite {
     this.frameTimer++;
   }
   setAnimation(key) {
-    console.log(key)
     if(this.currentAnimation !== key) {
       this.currentAnimation = key;
       this.currentAnimationFrame = 0;
