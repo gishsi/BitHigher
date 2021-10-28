@@ -16,10 +16,27 @@ export default class Game {
         }
         this.background = new Background(this.world);
         this.player = new Player(0, 50, 16, 16);
-        this.platforms = [new Platform(32, 32, 64, 16), new Platform(0, 0, 64, 16), new Platform(40, -100, 64, 16), new Platform(0, -150, 64, 16)]
+        this.platforms = [];
+        this.platformTimer = 0;
+        this.platformInterval = 100;
+
         this.ground = new Ground(0, this.world.height - this.world.groundHeight, this.world.width, this.world.groundHeight);
     }
-    update(deltaTime) {
+
+    // consider a platform manager: or an object manager
+    // a class that will manage all update timings and adding objects to arrays
+    // would also be beneficial for Ground for example
+    addPlatform(){
+        if(this.platformTimer > this.platformInterval) {
+            this.platforms.push(new Platform(Math.random() * this.world.width, -8, 32, 8))
+            this.platformTimer = 0;
+        } else {
+            this.platformTimer++;
+        }
+    }
+
+    update() {
+        this.addPlatform();
         // update the moving ground
         if(this.ground.t - 1 < this.world.height) this.ground.update();
         // update player

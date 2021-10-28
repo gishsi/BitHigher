@@ -2,7 +2,7 @@ export default class Sprite {
   constructor(config) {
     // Set up the image
     this.image = new Image();
-    this.image.src = config.src;
+    this.image.src = config.src || "src/assets/images/default.png";
     // Not drawing before the image is loaded
     this.image.onload = () => {
       this.isLoaded = true;

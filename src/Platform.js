@@ -1,12 +1,12 @@
 import GameObject from "./GameObject.js";
 import Sprite from './Sprite.js';
 export default class Platform extends GameObject {
-    constructor(l, t, w, h, src) {
-        super(l, t, w, h, src);
+    constructor(l, t, w, h) {
+        super(l, t, w, h);
         this.vy = 0.5;
         this.sprite =  new Sprite({
             gameObject: this,
-            src: src || "src/assets/images/platform.png",
+            src: "src/assets/images/p2.png",
         });
     }
     update() {
