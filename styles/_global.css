@@ -1,0 +1,138 @@
+/* 
+ * Global styles for all the websites
+ * Each css file uses these global styles and overwrites them if necessary
+ * Font license: SIL Open Font License 
+ *
+ * Author: Julia Drozdz
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+:root {
+  --darkPrimary: #1e1e1e;
+  --secondaryBtn: rgb(100, 100, 100);
+  --callToAction: rgb(101, 75, 253);
+  --red: rgb(240, 42, 42);
+  --light: #e1e1e1;
+  --font: "Press Start 2P", cursive;
+  --black: #000;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  min-height: 100vh;
+  background-color: var(--darkPrimary);
+  color: var(--light);
+}
+body section {
+  margin: 1rem;
+}
+
+a,
+button,
+input[type="submit"] {
+  padding: 1rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  display: block;
+  width: fit-content;
+  color: var(--darkPrimary);
+  background-color: var(--light);
+}
+input,
+button {
+  font-family: inherit;
+}
+input[type="submit"]:hover,
+button:hover {
+  cursor: pointer;
+}
+button:disabled {
+  filter: brightness(0.3);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.input-container input {
+  border: none;
+  border-bottom: 2px solid var(--black);
+  padding: 1rem 0;
+  font-size: 1.2rem;
+}
+.input-container input:focus {
+  outline: none;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+}
+ul li {
+  list-style-type: none;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+ul li:hover {
+  transform: translateX(1rem);
+}
+
+@media (min-width: 900px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Menu */
+.menu {
+  margin: 1rem;
+}
+.menu-link {
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: var(--secondaryBtn);
+}
+
+/* Utility classes */
+.p1 {
+  padding: 1rem 1rem;
+}
+.m1 {
+  margin: 1rem 1rem;
+}
+.p1-vertical {
+  padding: 1rem 0;
+}
+.p1-horizontal {
+  padding: 0 1rem;
+}
+.m1-vertical {
+  margin: 2rem 0;
+}
+.m1-horiztonal {
+  margin: 0 2rem;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}

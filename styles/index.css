@@ -1,0 +1,42 @@
+@import "./_global.css";
+body {
+  color: var(--darkPrimary);
+  background-color: var(--white);
+}
+
+a,
+button,
+input[type="submit"] {
+  color: var(--light);
+  background-color: var(--darkPrimary);
+}
+
+button {
+  color: var(--darkPrimary);
+  background-color: var(--white);
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+  transition: all 0.4s ease-in-out;
+}
+
+button:hover {
+  border-bottom: 5px solid var(--black);
+}
+
+.submit {
+  margin-top: 5rem;
+  position: relative;
+}
+
+#login-button {
+  position: absolute;
+  right: 0;
+}
+.error {
+  padding: 0.5rem 0;
+  line-height: 1.3rem;
+  margin: 0.2rem;
+  color: var(--red);
+  max-width: 500px;
+  font-size: 0.8rem;
+}

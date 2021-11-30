@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BitHigher</title>
+    <link rel="icon" href="./images/horse-avatar.png" />
+    <link rel="stylesheet" href="./styles/game.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="togglers">
+        <button id="toggleMusic" class="toggler">
+          <img src="./images/music.png" alt="MusicIcon" />
+        </button>
+        <button id="toggleSound" class="toggler">
+          <img src="./images/sound.png" alt="SoundIcon" />
+        </button>
+      </div>
+      <div class="side">
+        <p id="user">Hello, <span id="name"></span></p>
+        <p id="score">Score: 0</p>
+        <button id="play">Play</button>
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <script src="./src/fetchSingleUser.js"></script>
+    <script src="./src/updateUser.js"></script>
+    <script src="./src/game/main.js" type="module"></script>
+    <script src="./src/checkIfUsernameSet.js"></script>
+  </body>
+</html>

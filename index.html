@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Tower</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <canvas id="canvas"></canvas>
-     <script src="./src/main.js" type="module"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BitHigher</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="icon" href="./images/horse-avatar.png" />
+  </head>
+  <body>
+    <section class="menu">
+      <ul>
+        <li>
+          <a class="menu-link" href="./scoreboard.html" class="p1 m1"
+            >Scoreboard</a
+          >
+        </li>
+        <li>
+          <a class="menu-link" href="./about.html" class="p1 m1">About</a>
+        </li>
+        <li>
+          <a class="menu-link" href="./help.html" class="p1 m1">Help</a>
+        </li>
+      </ul>
+    </section>
+    <section class="welcome-container">
+      <h1 class="title p1 m1">Welcome to BitHigher!</h1>
+
+      <div id="form-container" class="form-container m1-vertical p1-vertical">
+        <form action="" id="login-form">
+          <div class="input-container m1">
+            <label for="name">Name</label>
+            <input type="text" name="username" id="username-input" />
+            <p class="error"></p>
+          </div>
+          <div class="submit flex">
+            <input
+              type="submit"
+              value="Log in"
+              name="submit"
+              id="login-button"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="./src/fetchSingleUser.js"></script>
+    <script src="./src/createUser.js"></script>
+    <script src="./src/userLoginForm.js" defer></script>
+  </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BitHigher</title>
+    <link rel="stylesheet" href="./styles/customize.css" />
+    <link rel="icon" href="./images/horse-avatar.png" />
+  </head>
+  <body>
+    <section class="menu">
+      <ul>
+        <li>
+          <a class="menu-link" href="./scoreboard.html" class="p1 m1"
+            >Scoreboard</a
+          >
+        </li>
+        <li>
+          <a class="menu-link" href="./about.html" class="p1 m1">About</a>
+        </li>
+        <li>
+          <a class="menu-link" id="logout" href="./index.html" class="p1 m1"
+            >Log out</a
+          >
+        </li>
+        <li>
+          <a class="menu-link" href="./help.html" class="p1 m1">Help</a>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h1 class="title p1-vertical m1-vertical">Customize your game</h1>
+      <div id="form-container">
+        <form action="" id="customization-form">
+          <label for="name" class="m1">Difficulty</label>
+          <div class="input-container m1 flex">
+            <div class="option difficulty-option">
+              <input type="radio" name="difficulty" id="easy" value="easy" />
+              <label for="easy">Easy</label>
+            </div>
+            <div class="option difficulty-option">
+              <input
+                type="radio"
+                name="difficulty"
+                id="medium"
+                value="medium"
+              />
+              <label for="medium">Medium</label>
+            </div>
+            <div class="option difficulty-option">
+              <input type="radio" name="difficulty" id="hard" value="hard" />
+              <label for="hard">Hard</label>
+            </div>
+          </div>
+          <label for="name" class="m1">Pick your hero</label>
+          <div class="input-container m1 flex">
+            <label class="option hero-option m1">
+              <input type="radio" id="chicken" name="hero" value="chicken" />
+              <img src="./images/chicken-avatar.png" alt="chicken" />
+            </label>
+            <label class="option hero-option m1">
+              <input type="radio" id="goose" name="hero" value="goose" />
+              <img src="./images/goose-avatar.png" alt="goose" />
+            </label>
+            <label class="option hero-option m1">
+              <input type="radio" id="horse" name="hero" value="horse" />
+              <img src="./images/horse-avatar.png" alt="horsy" />
+            </label>
+            <label class="option hero-option m1">
+              <input type="radio" id="cat" name="hero" value="cat" />
+              <img src="./images/cat-avatar.png" alt="cat" />
+            </label>
+          </div>
+          <input type="submit" value="Play" name="submit" id="play-button" />
+        </form>
+      </div>
+    </section>
+    <script src="./src/fetchSingleUser.js"></script>
+    <script src="./src/updateUser.js"></script>
+    <script src="./src/userPreferences.js"></script>
+    <script src="./src/checkIfUsernameSet.js"></script>
+    <script>
+      document.getElementById("logout").addEventListener("click", () => {
+        console.log("Clear");
+        window.localStorage.clear();
+      });
+    </script>
+  </body>
+</html>
