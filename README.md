@@ -25,3 +25,5 @@ Remeber to change the path in the get_db_handle_path file in the api folder to m
 - HTML5Canvas, HTML, CSS
 - PHP
 - PostgreSQL
+## More information
+I have used plenty of resources while making this project, and some code I cannot take the credit for. Those resources I have listed in about.html.
