@@ -79,6 +79,6 @@ const createUsersTable = async (url, table) => {
 
 // Get data and append the table after the DOM has been loaded (and images)
 window.onload = createUsersTable(
-  "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/api/readScoreboard.php",
+  "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/api/readScoreboard.php",
   document.getElementById("scoreboard")
 );

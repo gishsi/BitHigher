@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read me fot BitHigher</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Epilogue&display=swap");
+    body {
+      font-family: "Epilogue", sans-serif;
+    }
+    body main {
+      margin-top: 3rem;
+    }
+    #sql-command {
+      background-color: bisque;
+      padding: 0.5rem;
+    }
+    @media (min-width: 900px) {
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+    }
+  </style>
+  <body>
+    <main>
+      <section id="setup">
+        <h1>Setup</h1>
+        <ol>
+          <li>
+            To setup BitHigher download and unzip the coursework_jud28.zip
+          </li>
+          <li>
+            Setup the database wiht the following command:
+            <div id="sql-command">
+              CREATE TABLE users( name varchar(20) primary key, <br />
+              score int default 0, <br />
+              difficulty varchar(11) default 'easy', <br />
+              hero varchar(11) default 'goose' <br />
+              );
+            </div>
+          </li>
+          <li>
+            Change the path in the get_db_handle_path file in the api folder to
+            match your own PDO connection file.
+          </li>
+        </ol>
+      </section>
+      <section id="structure">
+        <h1>Structure of BitHigher</h1>
+        <ul>
+          <li>
+            <p>
+              api directory - contains fetch instructions for the databse and
+              all endpoints for this project
+            </p>
+            <ul>
+              <li>createUser.php</li>
+              <li>get_db_handle_path.php</li>
+              <li>queries.php</li>
+              <li>readScoreboard.php</li>
+              <li>readUser.php</li>
+              <li>updateScore.php</li>
+              <li>updateUser.php</li>
+            </ul>
+          </li>
+          <li>
+            <p>images - conaints images for the pages</p>
+            <ul>
+              <li>cat-avatar.png</li>
+              <li>chicken-avatar.png</li>
+              <li>goose-avatar.png</li>
+              <li>horse-avatar.png</li>
+              <li>music.png</li>
+              <li>sound.png</li>
+            </ul>
+          </li>
+          <li>
+            <p>src - scripts for the game and for the pages</p>
+            <ul>
+              <li>checkIfUsernameSet.js</li>
+              <li>createUser.js</li>
+              <li>fetchSingleUser.js</li>
+              <li>scoreboard.js</li>
+              <li>updateScore.js</li>
+              <li>userLoginForm.js</li>
+              <li>userPreferences.js</li>
+              <li>
+                <p>game</p>
+                <ul>
+                  <li>AssetsManager.js</li>
+                  <li>Background.js</li>
+                  <li>Controller.js</li>
+                  <li>Display.js</li>
+                  <li>Game.js</li>
+                  <li>GameObject.js</li>
+                  <li>Ground.js</li>
+                  <li>main.js</li>
+                  <li>Overlap.js</li>
+                  <li>Platform.js</li>
+                  <li>Player.js</li>
+                  <li>Sprite.js</li>
+                  <li>
+                    assets
+                    <ul>
+                      <li>images - images for the game</li>
+                      <li>sound - sounds for the game</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>styles - CSS styles</li>
+          <li>customize.html</li>
+          <li>about.html</li>
+          <li>game.html</li>
+          <li>help.html</li>
+          <li>scoreboard.html</li>
+          <li>index.html</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

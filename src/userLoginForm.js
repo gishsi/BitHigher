@@ -29,7 +29,7 @@ const logInUser = async (e) => {
   // disable automatic reload
   e.preventDefault();
   let customizePageURL =
-    "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/customize.html";
+    "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/customize.html";
   // getElementsByName returns an array, the first index is the username
   let username = document.getElementsByName("username")[0].value;
   // Remove spaces from input
@@ -44,7 +44,7 @@ const logInUser = async (e) => {
   if (!errorMessage) {
     window.localStorage.setItem("username", username);
     let data = await fetchUser(
-      "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/api/readUser.php"
+      "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/api/readUser.php"
     );
 
     // Check if the user exists
@@ -53,7 +53,7 @@ const logInUser = async (e) => {
     } else {
       // create a new user
       let data = await createUser(
-        "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/api/createUser.php"
+        "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/api/createUser.php"
       );
       window.location.href = customizePageURL;
     }

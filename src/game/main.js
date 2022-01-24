@@ -76,11 +76,11 @@ document.getElementById("toggleSound").addEventListener("click", toggleSound);
 const handleGameOver = async (e) => {
   if (e.code === "KeyG" && gamestate === GAMESTATES.GAMEOVER) {
     let data = await fetchUser(
-      "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/api/readUser.php"
+      "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/api/readUser.php"
     );
     if (data.score < game.score) {
       updateUser(
-        "hhttps://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/api/updateScore.php",
+        "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/api/updateScore.php",
         {
           username: window.localStorage.getItem("username"),
           score: game.score,
@@ -179,7 +179,7 @@ const draw = () => {
 const update = () => {
   if (gamestate === GAMESTATES.RUNNING) updateGame();
   else return;
-  // Gamover
+  // Game over
   if (game.hasPlayerFallen()) gamestate = GAMESTATES.GAMEOVER;
   document.getElementById("score").innerText = `Score: ${game.score}`;
 };
@@ -218,7 +218,7 @@ const startGame = () => {
  */
 const load = async () => {
   let data = await fetchUser(
-    "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/api/readUser.php"
+    "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/api/readUser.php"
   );
   document.getElementById("name").innerText = data.name;
   userPreferences = {

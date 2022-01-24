@@ -1,7 +1,7 @@
 /**
- *
+ * Updates the score of the user
  * @param  url - the url of the endpoint
- * @param  user - user pbject
+ * @param  user - user object
  * @returns true if the update was successful
  */
 const updateScore = async (url, user) => {

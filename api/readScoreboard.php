@@ -5,18 +5,20 @@
  * @author: Julia Drozdz
  */
 // Headers
+// Since the request is going to be made from the same server, this could probably be omitted, but I decided to leave it anyway (CORS)
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-require '../server/get_db_handle_path.php';
+require 'get_db_handle_path.php';
 require GET_DB_HANDLE_PATH . "/get_db_handle.php";
-require_once '../server/queries.php';
+require_once 'queries.php';
 try {
     // Users
     $result = readScoreboard(get_db_handle());
 
     // Are there any users?
     $num = $result->rowCount();
+
     if ($num > 0) {
         $users = array();
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {

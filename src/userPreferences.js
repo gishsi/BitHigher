@@ -18,12 +18,12 @@ const handleFormSubmit = async (e, form) => {
   formData.append("username", localStorage.getItem("username"));
   // updateUser is a funciton from updateUser.js
   let isUpdated = await updateUser(
-    "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/api/updateUser.php",
+    "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/api/updateUser.php",
     Object.fromEntries(formData)
   );
   if (isUpdated)
     window.location.href =
-      "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/game.html";
+      "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/game.html";
 };
 
 /**
@@ -33,7 +33,7 @@ const handleFormSubmit = async (e, form) => {
  */
 const setInitialData = async () => {
   let data = await fetchUser(
-    "https://users.aber.ac.uk/jud28/CS25320/coursework/1bitHigher/api/readUser.php"
+    "https://users.aber.ac.uk/jud28/CS25320/coursework/BitHigher/api/readUser.php"
   );
 
   document.getElementById(data.hero).checked = true;

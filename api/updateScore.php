@@ -8,9 +8,9 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-require '../server/get_db_handle_path.php';
+require 'get_db_handle_path.php';
 require GET_DB_HANDLE_PATH . "/get_db_handle.php";
-require_once '../server/queries.php';
+require_once 'queries.php';
 
 try {
     // With the FetchAPI the $_POST or $_GET variables are empty (see references)

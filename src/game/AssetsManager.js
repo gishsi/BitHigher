@@ -18,10 +18,7 @@ export default class AssetsManager {
     ];
     this.loadedImages = new Map();
     this.music = new Audio();
-    this.soundsSrc = [
-      "src/game/assets/sound/Jump3.mp3",
-      "src/game/assets/sound/Death001.wav",
-    ];
+    this.soundsSrc = ["src/game/assets/sound/Jump3.mp3"];
     this.sounds = new Map();
   }
   /**
@@ -54,7 +51,7 @@ export default class AssetsManager {
    */
   loadMusic() {
     let audio = new Audio();
-    audio.src = "./src/game/assets/sound/jumper.flac";
+    audio.src = "./src/game/assets/sound/alltimehighjump.mp3";
     audio.loop = true;
     audio.autoplay = false;
     audio.volume = 0.2;
